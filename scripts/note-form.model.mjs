@@ -44,6 +44,7 @@ const noteFormModel = {
       id: Date.now().toString(),
       ...noteFormData,
       archived: false,
+      dates: parseDates(noteFormData.content),
       createdAt: getFormattedDate(new Date()),
     };
 
@@ -60,7 +61,11 @@ const noteFormModel = {
       new FormData(this.noteForm).entries()
     );
 
-    const editedNote = { ...prevNote, ...noteFormData };
+    const editedNote = {
+      ...prevNote,
+      ...noteFormData,
+      dates: parseDates(noteFormData.content),
+    };
 
     noteModel.handleAction({ type: EDIT_NOTE, payload: editedNote });
 

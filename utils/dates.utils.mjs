@@ -24,10 +24,12 @@ export const getFormattedDate = (today) => {
 };
 
 export const parseDates = (content) => {
-  console.log(content);
+  try {
+    const dateRegExp =
+      /(0?[1-9]|[12][0-9]|3[01])[\/\-\.](0?[1-9]|1[012])[\/\-\.]\d{4}/g;
 
-  const dateRegExp =
-    /(0?[1-9]|[12][0-9]|3[01])[\/\-\.](0?[1-9]|1[012])[\/\-\.]\d{4}/g;
-
-  return content.match(dateRegExp);
+    return content.match(dateRegExp).join(', ');
+  } catch (error) {
+    return '';
+  }
 };

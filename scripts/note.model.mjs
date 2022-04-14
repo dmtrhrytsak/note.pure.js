@@ -7,7 +7,7 @@ export const REMOVE_NOTE = 'REMOVE_NOTE';
 export const TOGGLE_NOTE_ARCHIVED = 'TOGGLE_NOTE_ARCHIVED';
 
 const noteModel = {
-  createNoteRow({ id, name, category, content, archived, createdAt }) {
+  createNoteRow({ id, name, category, content, archived, dates, createdAt }) {
     return `
       <tr data-note-id=${id}>
         <td class="p-4 border border-slate-300 font-semibold">
@@ -35,7 +35,9 @@ const noteModel = {
         <td class="p-4 border border-slate-300 text-gray-600 overflow-x-auto">${createdAt}</td>
         <td class="p-4 border border-slate-300 text-gray-600 overflow-x-auto">${category}</td>
         <td class="p-4 border border-slate-300 text-gray-600 overflow-x-auto">${content}</td>
-        <td class="p-4 border border-slate-300 text-gray-600 overflow-x-auto"></td>
+        <td class="p-4 border border-slate-300 text-gray-600 overflow-x-auto">${
+          dates || ''
+        }</td>
       </tr>
     `;
   },
