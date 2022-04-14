@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <title>notes.js</title>
+</head>
+
+<body class="bg-gray-100">
+  <main>
+    <div class="container mx-auto p-4">
+      <section>
+        <table class="w-full mb-12 bg-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="py-1 border border-slate-300">Name</th>
+              <th class="py-1 border border-slate-300">Created</th>
+              <th class="py-1 border border-slate-300">Category</th>
+              <th class="py-1 border border-slate-300">Content</th>
+              <th class="py-1 border border-slate-300">Dates</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white" id="activeNotes">
+            <tr>
+              <td class="flex items-center p-4 border border-slate-300 font-semibold">
+                <span class="inline-block w-10 h-10 p-2 mr-3 rounded-full bg-blue-700 text-center">
+                  <i class="fa-solid fa-dolly text-blue-200"></i>
+                </span>
+
+                <div>
+                  <p>
+                    Shopping list
+                  </p>
+
+                  <div class="flex space-x-1 text-sm text-blue-500">
+                    <button class="underline" data-action="edit">Edit</button>
+                    <button class="underline" data-action="archive">Archive</button>
+                    <button class="underline" data-action="remove">Delete</button>
+                  </div>
+                </div>
+
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">
+                April 20, 2022
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">Task</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Tomatoes, Bread</td>
+              <td class="p-4 border border-slate-300 text-gray-600"></td>
+            </tr>
+
+            <tr>
+              <td class="flex items-center p-4 border border-slate-300 font-semibold">
+                <span class="inline-block w-10 h-10 p-2 mr-3 rounded-full bg-indigo-700 text-center">
+                  <i class="fa-solid fa-message text-indigo-200"></i>
+                </span>
+
+                <div>
+                  <p>
+                    Evolution
+                  </p>
+
+                  <div class="flex space-x-1 text-sm text-blue-500">
+                    <button class="underline" data-action="edit">Edit</button>
+                    <button class="underline" data-action="archive">Archive</button>
+                    <button class="underline" data-action="remove">Delete</button>
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">April 27, 2022</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Random Thought</td>
+              <td class="p-4 border border-slate-300 text-gray-600">The evolution</td>
+              <td class="p-4 border border-slate-300 text-gray-600"></td>
+            </tr>
+
+            <tr>
+              <td class="flex items-center p-4 border border-slate-300 font-semibold">
+                <span class="inline-block w-10 h-10 p-2 mr-3 rounded-full bg-green-700 text-center">
+                  <i class="fa-solid fa-lightbulb text-green-200"></i>
+                </span>
+
+                <div>
+                  <p>
+                    New Feature
+                  </p>
+
+                  <div class="flex space-x-1 text-sm text-blue-500">
+                    <button class="underline" data-action="edit">Edit</button>
+                    <button class="underline" data-action="archive">Archive</button>
+                    <button class="underline" data-action="remove">Delete</button>
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">May 05, 2021</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Idea</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Implement new feature</td>
+              <td class="p-4 border border-slate-300 text-gray-600">3/5/2021, 5/5/2021</td>
+            </tr>
+
+            <tr>
+              <td class="flex items-center p-4 border border-slate-300 font-semibold">
+                <span class="inline-block w-10 h-10 p-2 mr-3 rounded-full bg-teal-700 text-center">
+                  <i class="fa-solid fa-quote-left text-teal-200"></i>
+                </span>
+
+                <div>
+                  <p>
+                    William Gaddis
+                  </p>
+
+                  <div class="flex space-x-1 text-sm text-blue-500">
+                    <button class="underline" data-action="edit">Edit</button>
+                    <button class="underline" data-action="archive">Archive</button>
+                    <button class="underline" data-action="remove">Delete</button>
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">May 07, 2022</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Quote</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Power makes you cool</td>
+              <td class="p-4 border border-slate-300 text-gray-600"></td>
+            </tr>
+
+            <tr>
+              <td class="flex items-center p-4 border border-slate-300 font-semibold">
+                <span class="inline-block w-10 h-10 p-2 mr-3 rounded-full bg-teal-700 text-center">
+                  <i class="fa-solid fa-quote-left text-teal-200"></i>
+                </span>
+
+                <div>
+                  <p>
+                    Books
+                  </p>
+
+                  <div class="flex space-x-1 text-sm text-blue-500">
+                    <button class="underline" data-action="edit">Edit</button>
+                    <button class="underline" data-action="archive">Archive</button>
+                    <button class="underline" data-action="remove">Delete</button>
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 border border-slate-300 text-gray-600">May 07, 2021</td>
+              <td class="p-4 border border-slate-300 text-gray-600">Quote</td>
+              <td class="p-4 border border-slate-300 text-gray-600">The lean startup</td>
+              <td class="p-4 border border-slate-300 text-gray-600"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="flex justify-end">
+          <button class="w-20 h-20 rounded-full bg-blue-600 text-white font-semibold leading-4 hover:bg-blue-700"
+            id="createNoteBtn">
+            Create Note
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="hidden m-2 fixed left-0 top-0 right-0 bottom-0 bg-gray-300" id="createNoteModal">
+      <div>
+        <button class="absolute right-0 p-2 bg-gray-100" id="closeModalBtn">
+          <i class="fa-regular fa-circle-xmark text-xl"></i>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-center min-h-full">
+        <form class="w-96" id="createNoteForm">
+          <fieldset class="flex flex-col space-y-2 mb-4">
+            <legend class="mb-1 text-4xl">Create note</legend>
+
+            <label class="flex items-center justify-between gap-12 font-semibold">
+              <span>Name:</span>
+              <input type="text" name="name" class="p-1 border-2 border-transperent outline-none focus:border-blue-600"
+                placeholder="Task">
+            </label>
+
+            <label class="flex items-center justify-between gap-6 font-semibold">
+              <span>Category:</span>
+              <select name="category"
+                class="p-1 bg-white w-full border-2 border-transperent outline-none focus:border-blue-600">
+                <option value="task">Task</option>
+                <option value="idea">Idea</option>
+                <option value="idea">Random Thought</option>
+                <option value="quote">Quote</option>
+              </select>
+            </label>
+
+            <label class="flex items-center justify-between font-semibold">
+              <span>
+                Content:
+              </span>
+              <input type="text" name="content" placeholder="Finish project"
+                class="p-1 border-2 border-transperent outline-none focus:border-blue-600">
+            </label>
+          </fieldset>
+
+          <button type="submit"
+            class="w-full py-2 bg-blue-600 text-white font-semibold hover:bg-blue-700">Create</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="modules/modal.module.mjs" type="module"></script>
+  <script src="modules/notes.module.mjs" type="module"></script>
+</body>
+
+</html>
