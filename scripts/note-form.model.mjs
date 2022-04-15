@@ -18,6 +18,7 @@ const noteFormModel = {
     document.body.classList.add('overflow-hidden');
 
     this.noteFormBtn.innerText = type;
+    this.noteFormLegend.innerText = `${type} Note`;
 
     if (type === 'Edit') {
       this.populateForm(note);
@@ -77,6 +78,7 @@ const noteFormModel = {
     this.noteFormWrapper = document.querySelector('#noteFormWrapper');
     this.noteFormBtn = document.querySelector('#noteFormBtn');
     this.noteForm = document.querySelector('#noteForm');
+    this.noteFormLegend = document.querySelector('#noteFormLegend');
 
     const closeNoteBtn = document.querySelector('#closeFormBtn');
 
